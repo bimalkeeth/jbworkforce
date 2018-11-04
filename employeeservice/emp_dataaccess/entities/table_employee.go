@@ -12,7 +12,7 @@ type TableEmployee struct {
 	LastName        string      `gorm:"column:lastname;not_null"`
 	PrefName        string      `gorm:"column:name;not_null"`
 	GenderId        uint        `gorm:"column:genderid;not_null"`
-	DateofBirth     time.Time   `gorm:"column:dateofbirth;not_null"`
+	DateOfBirth     time.Time   `gorm:"column:dateofbirth;not_null"`
 	EmpNo           string      `gorm:"column:empno;not_null"`
 	IsActive        bool        `gorm:"column:isactive;not_null;default:false"`
 	IsDisables      bool        `gorm:"column:isdisables;not_null;default:false"`

@@ -7,8 +7,8 @@ import "github.com/jinzhu/gorm"
 //--------------------------------------------
 type TableAddress struct {
 	gorm.Model
-	Street           string `gorm:"column:street;not_null"`
-	Street2          string
+	Street           string           `gorm:"column:street;not_null"`
+	Street2          string           `gorm:"column:street2"`
 	City             string           `gorm:"column:city;not_null"`
 	PostCode         string           `gorm:"column:postcode;not_null"`
 	StateId          uint             `gorm:"column:stateid;not_null"`
