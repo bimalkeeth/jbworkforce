@@ -9,3 +9,7 @@ type TableQualifications struct {
 	QualificationTypeId    uint                   `gorm:"column:qualificationtypeid;not_null"`
 	TableQualificationType TableQualificationType `gorm:"foreignkey:qualificationtypeid"`
 }
+
+func (c TableQualifications) TableName() string {
+	return "table_qualifications"
+}
