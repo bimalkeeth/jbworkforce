@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-type TablePayrollActivityArchive struct {
+type TablePayrollActivityWork struct {
 	gorm.Model
 	PayPeriodId         string    `gorm:"column:payperiodid"`
 	PayPeriodSubId      string    `gorm:"column:payperiodsubid"`
@@ -47,6 +47,6 @@ type TablePayrollActivityArchive struct {
 	Note                string    `gorm:"column:note"`
 }
 
-func (c TablePayrollActivityArchive) TableName() string {
-	return "table_payrollactivityarchive"
+func (c TablePayrollActivityWork) TableName() string {
+	return "table_payrollactivitywork"
 }
