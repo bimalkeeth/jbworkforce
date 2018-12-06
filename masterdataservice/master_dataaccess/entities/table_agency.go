@@ -4,7 +4,9 @@ import "github.com/jinzhu/gorm"
 
 type TableAgency struct {
 	gorm.Model
-	AgencyName string `gorm:"column:agencyname;not_null"`
+	AgencyName      string                `gorm:"column:agencyname;not_null"`
+	AgencyAddresses []TableAgencyAddress  `gorm:"foreignkey:agencyid"`
+	AgencyContacts  []TableAgencyContacts `gorm:"foreignkey:agencyid"`
 }
 
 func (c TableAgency) TableName() string {
