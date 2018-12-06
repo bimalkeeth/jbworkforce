@@ -7,12 +7,13 @@ import (
 
 type TableCampus struct {
 	gorm.Model
-	CampusName              string    `gorm:"column:campusname;not_null"`
-	CampusAbbr              string    `gorm:"column:campusabbr;not_null"`
-	Description             string    `gorm:"column:description"`
-	YearlyPlannerDate       time.Time `gorm:"column:yearlyplannerdate"`
-	YearlyPlannerPeriodDate time.Time `gorm:"column:yearlyplannerperioddate"`
-	IsActive                bool      `gorm:"column:isactive;not_null;default:true"`
+	CampusName              string          `gorm:"column:campusname;not_null"`
+	CampusAbbr              string          `gorm:"column:campusabbr;not_null"`
+	Description             string          `gorm:"column:description"`
+	YearlyPlannerDate       time.Time       `gorm:"column:yearlyplannerdate"`
+	YearlyPlannerPeriodDate time.Time       `gorm:"column:yearlyplannerperioddate"`
+	IsActive                bool            `gorm:"column:isactive;not_null;default:true"`
+	Divisions               []TableDivision `gorm:"foreignkey:campusid"`
 }
 
 func (c TableCampus) TableName() string {
