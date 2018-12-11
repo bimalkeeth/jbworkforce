@@ -29,6 +29,8 @@ type TableEmployee struct {
 	EmployeeAddress        []TableEmployeeAddress      `gorm:"foreignkey:employeeid"`
 	EmployeeAgencies       []TableEmployeeAgency       `gorm:"foreignkey:employeeid"`
 	EmployeeClinicalStream TableEmployeeClinicalStream `gorm:"foreignkey:employeeid"`
+	EmployeeAllowance      []TableEmployeeAllowance    `gorm:"foreignkey:employeeid"`
+	EmployeeCompetency     TableEmployeeCompetency     `gorm:"foreignkey:employeeid"`
 }
 
 func (c TableEmployee) TableName() string {
