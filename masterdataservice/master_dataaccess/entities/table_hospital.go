@@ -15,6 +15,7 @@ type TableHospital struct {
 	Description       string            `gorm:"column:description;not_null"`
 	HospitalLogo      string            `gorm:"column:hospitallogo;not_null"`
 	TableOrganisation TableOrganisation `gorm:"foreignkey:organisationid"`
+	CostCenters       []TableCostCentre `gorm:"foreignkey:hospitalid"`
 }
 
 func (c TableHospital) TableName() string {
