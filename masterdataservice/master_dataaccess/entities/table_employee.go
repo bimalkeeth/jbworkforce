@@ -34,6 +34,8 @@ type TableEmployee struct {
 	EmployeeCompetency           TableEmployeeCompetency             `gorm:"foreignkey:employeeid"`
 	EmployeeTransitions          []TableEmployeeTransition           `gorm:"foreignkey:employeeid"`
 	EmployeeDepartmentPreference []TableEmployeeDepartmentPreference `gorm:"foreignkey:employeeid"`
+	EmployeeDiscrepancies        []TableEmployeeCompetency           `gorm:"foreignkey:employeeid"`
+	EmployeeEmpType              TableEmployeeEmpType                `gorm:"foreignkey:employeeid"`
 }
 
 func (c TableEmployee) TableName() string {

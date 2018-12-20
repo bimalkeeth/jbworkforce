@@ -11,6 +11,7 @@ type TableEmployeeEmpType struct {
 	TableEmployee      TableEmployee      `gorm:"foreignkey:employeeid"`
 	TableEmployeeType  TableEmployeeType  `gorm:"foreignkey:employeetypeid"`
 	TableSubDepartment TableSubDepartment `gorm:"foreignkey:subdepartmentid"`
+	TableCostCentre    TableCostCentre    `gorm:"foreignkey:costcenterid"`
 }
 
 func (c TableEmployeeEmpType) TableName() string {
