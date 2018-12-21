@@ -25,17 +25,18 @@ type TableEmployee struct {
 	AppointmentDate time.Time `gorm:"column:appointmentdate"`
 	ResignDate      time.Time `gorm:"column:resigndate"`
 
-	EmployeeDetail               TableEmployeeDetail                 `gorm:"foreignkey:employeeid"`
-	EmployeeContacts             []TableEmployeeContact              `gorm:"foreignkey:employeeid"`
-	EmployeeAddress              []TableEmployeeAddress              `gorm:"foreignkey:employeeid"`
-	EmployeeAgencies             []TableEmployeeAgency               `gorm:"foreignkey:employeeid"`
-	EmployeeClinicalStream       TableEmployeeClinicalStream         `gorm:"foreignkey:employeeid"`
-	EmployeeAllowance            []TableEmployeeAllowance            `gorm:"foreignkey:employeeid"`
-	EmployeeCompetency           TableEmployeeCompetency             `gorm:"foreignkey:employeeid"`
-	EmployeeTransitions          []TableEmployeeTransition           `gorm:"foreignkey:employeeid"`
-	EmployeeDepartmentPreference []TableEmployeeDepartmentPreference `gorm:"foreignkey:employeeid"`
-	EmployeeDiscrepancies        []TableEmployeeCompetency           `gorm:"foreignkey:employeeid"`
-	EmployeeEmpType              TableEmployeeEmpType                `gorm:"foreignkey:employeeid"`
+	EmployeeDetail               TableEmployeeDetail
+	EmployeeContacts             []TableEmployeeContact
+	EmployeeAddress              []TableEmployeeAddress
+	EmployeeAgencies             []TableEmployeeAgency
+	EmployeeClinicalStream       TableEmployeeClinicalStream
+	EmployeeAllowance            []TableEmployeeAllowance
+	EmployeeCompetency           TableEmployeeCompetency
+	EmployeeTransitions          []TableEmployeeTransition
+	EmployeeDepartmentPreference []TableEmployeeDepartmentPreference
+	EmployeeDiscrepancies        []TableEmployeeCompetency
+	EmployeeEmpType              TableEmployeeEmpType
+	EmployeeGroupEmp             TableEmployeeGroupEmp
 }
 
 func (c TableEmployee) TableName() string {
