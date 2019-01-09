@@ -8,12 +8,12 @@ import (
 type TableEmployee struct {
 	gorm.Model
 	AddressId       uint      `gorm:"column:addressid;not_null"`
-	FirstName       string    `gorm:"column:firstname;not_null"`
-	LastName        string    `gorm:"column:lastname;not_null"`
-	PrefName        string    `gorm:"column:name;not_null"`
+	FirstName       string    `gorm:"column:firstname;type:varchar(200);not_null"`
+	LastName        string    `gorm:"column:lastname;type:varchar(200);not_null"`
+	PrefName        string    `gorm:"column:name;type:varchar(150);not_null"`
 	GenderId        uint      `gorm:"column:genderid;not_null"`
 	DateOfBirth     time.Time `gorm:"column:dateofbirth;not_null"`
-	EmpNo           string    `gorm:"column:empno;not_null"`
+	EmpNo           string    `gorm:"column:empno;type:varchar(150);not_null"`
 	IsActive        bool      `gorm:"column:isactive;not_null;default:false"`
 	IsDisables      bool      `gorm:"column:isdisables;not_null;default:false"`
 	IsVirtual       bool      `gorm:"column:isvirtual;not_null;default:false"`
