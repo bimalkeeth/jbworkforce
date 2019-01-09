@@ -7,9 +7,9 @@ import (
 
 type TableGradeAward struct {
 	gorm.Model
-	GradeAwardName string    `gorm:"column:gradeawardname;not_null"`
-	GradeAwardAbbr string    `gorm:"column:gradeawardabbr;not_null"`
-	Description    string    `gorm:"column:description"`
+	GradeAwardName string    `gorm:"column:gradeawardname;type:varchar(200);not_null"`
+	GradeAwardAbbr string    `gorm:"column:gradeawardabbr;type:varchar(50);not_null"`
+	Description    string    `gorm:"column:description;type:varchar(300)"`
 	ActiveFrom     time.Time `gorm:"column:activefrom;not_null"`
 	ActiveTill     time.Time `gorm:"column:activetill;not_null"`
 	DisplayOrder   int       `gorm:"column:displayorder;not_null"`

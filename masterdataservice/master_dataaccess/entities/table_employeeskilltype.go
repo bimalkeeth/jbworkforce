@@ -4,10 +4,10 @@ import "github.com/jinzhu/gorm"
 
 type TableEmployeeSkillType struct {
 	gorm.Model
-	EmployeeId     uint           `gorm:"column:employeeid;not_null"`
-	SkillTypeId    uint           `gorm:"column:skilltypeid;not_null"`
-	TableEmployee  TableEmployee  `gorm:"foreignkey:employeeid"`
-	TableSkillType TableSkillType `gorm:"foreignkey:skilltypeid"`
+	EmployeeId  uint `gorm:"column:employeeid;not_null"`
+	SkillTypeId uint `gorm:"column:skilltypeid;not_null"`
+	Employee    TableEmployee
+	SkillType   TableSkillType
 }
 
 func (c TableEmployeeSkillType) TableName() string {

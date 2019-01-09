@@ -7,7 +7,7 @@ import (
 
 type TableFinancialYear struct {
 	gorm.Model
-	FinancialYearName string    `gorm:"column:financialyearname;not_null"`
+	FinancialYearName string    `gorm:"column:financialyearname;type:varchar(200);not_null"`
 	StartYear         int       `gorm:"column:startyear;not_null"`
 	StartDate         time.Time `gorm:"column:startdate;not_null"`
 	EndDate           time.Time `gorm:"column:enddate;not_null"`
