@@ -4,10 +4,10 @@ import "github.com/jinzhu/gorm"
 
 type TableTypes struct {
 	gorm.Model
-	TypeName          string            `gorm:"column:typename;not_null"`
-	TypeAbbr          string            `gorm:"column:typeabbr;not_null"`
-	TypeCategoryId    uint              `gorm:"column:typecategoryid;not_null"`
-	TableTypeCategory TableTypeCategory `gorm:"foreignkey:typecategoryid"`
+	TypeName       string `gorm:"column:typename;type:varchar(200);not_null"`
+	TypeAbbr       string `gorm:"column:typeabbr;type:varchar(50);not_null"`
+	TypeCategoryId uint   `gorm:"column:typecategoryid;not_null"`
+	TypeCategory   TableTypeCategory
 }
 
 func (c TableTypes) TableName() string {

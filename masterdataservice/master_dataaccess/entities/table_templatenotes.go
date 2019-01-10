@@ -4,9 +4,9 @@ import "github.com/jinzhu/gorm"
 
 type TableTemplateNotes struct {
 	gorm.Model
-	NoteTypeId    uint          `gorm:"column:notetypeid;not_null"`
-	Note          string        `gorm:"column:note"`
-	TableNoteType TableNoteType `gorm:"foreignkey:notetypeid"`
+	NoteTypeId uint   `gorm:"column:notetypeid;not_null"`
+	Note       string `gorm:"column:note"`
+	NoteType   TableNoteType
 }
 
 func (c TableTemplateNotes) TableName() string {
