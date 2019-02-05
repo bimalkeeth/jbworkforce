@@ -20,7 +20,7 @@ type TableEmployeeDetail struct {
 	RegistrationExpireDate time.Time `gorm:"column:registrationexpiredate"`
 	NoLift                 bool      `gorm:"column:nolift;not_null;default:true"`
 	IsCitizen              bool      `gorm:"column:iscitizen;not_null;default:true"`
-	Employee               TableEmployee
+	Employee               *TableEmployee
 }
 
 func (c TableEmployeeDetail) TableName() string {

@@ -25,18 +25,18 @@ type TableEmployee struct {
 	AppointmentDate time.Time `gorm:"column:appointmentdate"`
 	ResignDate      time.Time `gorm:"column:resigndate"`
 
-	EmployeeDetail               TableEmployeeDetail
-	EmployeeContacts             []TableEmployeeContact
-	EmployeeAddress              []TableEmployeeAddress
-	EmployeeAgencies             []TableEmployeeAgency
-	EmployeeClinicalStream       TableEmployeeClinicalStream
-	EmployeeAllowance            []TableEmployeeAllowance
-	EmployeeCompetency           TableEmployeeCompetency
-	EmployeeTransitions          []TableEmployeeTransition
-	EmployeeDepartmentPreference []TableEmployeeDepartmentPreference
-	EmployeeDiscrepancies        []TableEmployeeCompetency
-	EmployeeEmpType              TableEmployeeEmpType
-	EmployeeGroupEmp             TableEmployeeGroupEmp
+	EmployeeDetail               *TableEmployeeDetail
+	EmployeeContacts             []*TableEmployeeContact
+	EmployeeAddress              []*TableEmployeeAddress
+	EmployeeAgencies             []*TableEmployeeAgency
+	EmployeeClinicalStream       *TableEmployeeClinicalStream
+	EmployeeAllowance            []*TableEmployeeAllowance
+	EmployeeCompetency           *TableEmployeeCompetency
+	EmployeeTransitions          []*TableEmployeeTransition
+	EmployeeDepartmentPreference []*TableEmployeeDepartmentPreference
+	EmployeeDiscrepancies        []*TableEmployeeDiscrepancy
+	EmployeeEmpType              *TableEmployeeEmpType
+	EmployeeGroupEmp             *TableEmployeeGroupEmp
 }
 
 func (c TableEmployee) TableName() string {

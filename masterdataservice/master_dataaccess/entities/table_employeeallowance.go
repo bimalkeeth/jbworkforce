@@ -13,8 +13,8 @@ type TableEmployeeAllowance struct {
 	EndDate     time.Time `gorm:"column:enddate"`
 	Dollar      float64   `gorm:"column:dollar;not_null;default:0.00"`
 	IsActive    bool      `gorm:"column:isactive;default:true"`
-	Employee    TableEmployee
-	Allowance   TableAllowance
+	Employee    *TableEmployee
+	Allowance   *TableAllowance
 }
 
 func (c TableEmployeeAllowance) TableName() string {

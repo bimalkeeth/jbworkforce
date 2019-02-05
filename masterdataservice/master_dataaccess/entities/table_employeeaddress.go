@@ -6,8 +6,8 @@ type TableEmployeeAddress struct {
 	gorm.Model
 	AddressId  uint `gorm:"column:addressid;not_null"`
 	EmployeeId uint `gorm:"column:employeeid;not_null"`
-	Address    TableAddress
-	Employee   TableEmployee
+	Address    *TableAddress
+	Employee   *TableEmployee
 }
 
 func (c TableEmployeeAddress) TableName() string {

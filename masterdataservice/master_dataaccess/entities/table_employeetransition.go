@@ -12,7 +12,7 @@ type TableEmployeeTransition struct {
 	TransitionStatus  string         `gorm:"column:transitionstatus;type:varchar(100)"`
 	TransitionComment string         `gorm:"column:transitioncomment;type:varchar(250)"`
 	StaffMigrationTag postgres.Jsonb `gorm:"column:staffmigrationtag"`
-	Employee          TableEmployee  `gorm:"foreignkey:employeeid"`
+	Employee          *TableEmployee `gorm:"foreignkey:employeeid"`
 }
 
 func (c TableEmployeeTransition) TableName() string {

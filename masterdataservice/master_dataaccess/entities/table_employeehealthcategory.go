@@ -6,8 +6,8 @@ type TableEmployeeHealthCategory struct {
 	gorm.Model
 	EmployeeId       uint `gorm:"column:employeeid;not_null"`
 	HealthCategoryId uint `gorm:"column:healthcategoryid;not_null"`
-	Employee         TableEmployee
-	HealthCategory   TableHealthCategory
+	Employee         *TableEmployee
+	HealthCategory   *TableHealthCategory
 }
 
 func (c TableEmployeeHealthCategory) TableName() string {

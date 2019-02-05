@@ -14,7 +14,7 @@ type TableEmployeeQualifications struct {
 	Institution        string    `gorm:"column:institution;type:varchar(250);not_null"`
 	InstitutionAddress string    `gorm:"column:institutionaddress;type:varchar(300)"`
 	InstitutionContact string    `gorm:"column:institutioncontact;type:varchar(200)"`
-	Employee           TableEmployee
+	Employee           *TableEmployee
 }
 
 func (c TableEmployeeQualifications) TableName() string {

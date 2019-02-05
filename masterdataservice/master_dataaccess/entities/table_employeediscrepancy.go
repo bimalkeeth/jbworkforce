@@ -19,9 +19,9 @@ type TableEmployeeDiscrepancy struct {
 	NewData           string    `gorm:"column:newdata"`
 	Quality           string    `gorm:"column:quality"`
 	IsReported        bool      `gorm:"column:isreported;default:false"`
-	Status            TableStatus
-	Types             TableTypes
-	Employee          TableEmployee
+	Status            *TableStatus
+	Types             *TableTypes
+	Employee          *TableEmployee
 }
 
 func (c TableEmployeeDiscrepancy) TableName() string {
