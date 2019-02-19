@@ -9,7 +9,7 @@ type TableActivityTypes struct {
 	gorm.Model
 	ActivityTypeName string `gorm:"column:activitytypename;type:varchar(100);not_null"`
 	ActivityAbbr     string `gorm:"column:activityabbr;type:varchar(50);not_null"`
-	ClinicalStreams  []TableClinicalStream
+	ClinicalStreams  []*TableClinicalStream
 }
 
 func (c TableActivityTypes) TableName() string {

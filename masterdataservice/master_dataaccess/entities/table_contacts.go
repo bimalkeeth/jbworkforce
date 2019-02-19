@@ -1,6 +1,9 @@
 package entities
 
-import "github.com/jinzhu/gorm"
+import (
+	"errors"
+	"github.com/jinzhu/gorm"
+)
 
 type TableContacts struct {
 	gorm.Model
@@ -13,4 +16,13 @@ type TableContacts struct {
 
 func (c TableContacts) TableName() string {
 	return "table_contacts"
+}
+
+func (c TableContacts) Validate(db *gorm.DB) {
+	if c.ContactTypeId == 0 {
+		_ = db.AddError(errors.New("contact type should should not be empty"))
+	}
+	if len(c.Contact) > 250 {
+		_ = db.AddError(errors.New("contact contains more than 250 characters"))
+	}
 }

@@ -17,8 +17,8 @@ type TableAddress struct {
 	StateId       uint   `gorm:"column:stateid;not_null"`
 	Country       string `gorm:"column:country;type:varchar(100)"`
 	AddressTypeId uint   `gorm:"column:addresstypeid;not_null"`
-	AddressType   TableAddressType
-	State         TableState
+	AddressType   *TableAddressType
+	State         *TableState
 }
 
 func (c TableAddress) TableName() string {

@@ -1,10 +1,9 @@
 package relations
 
 import (
-	"github.com/jinzhu/gorm"
 	db "jbworkforce/masterdataservice/master_dataaccess/common"
 	con "jbworkforce/masterdataservice/master_dataaccess/contracts"
-	ent "jbworkforce/masterdataservice/master_dataaccess/entities"
+	entities "jbworkforce/masterdataservice/master_dataaccess/relations/entityrelations"
 	"log"
 )
 
@@ -18,15 +17,12 @@ func (*RelationBuilder) BuildDatabase(connInfo *con.ClientInfo) (err error) {
 		return err
 	}
 	database.SingularTable(true)
+	entities.CreateActivityTable(database)
+	entities.CreateAddressType(database)
+	entities.CreateState(database)
+	entities.CreateAddressType(database)
+	entities.CreateAgency(database)
+	entities.CreateAgencyAddress(database)
 
-	createActivityTable(database)
 	return nil
-}
-
-func createActivityTable(database *gorm.DB) {
-	if !database.HasTable(&ent.TableActivityTypes{}) {
-		database.CreateTable(&ent.TableActivityTypes{})
-		database.Model(&ent.TableActivityTypes{}).AddUniqueIndex("idx_table_activitytype_name", "activitytypename")
-		database.Model(&ent.TableActivityTypes{}).AddUniqueIndex("idx_table_activitytype_abbr", "activityabbr")
-	}
 }

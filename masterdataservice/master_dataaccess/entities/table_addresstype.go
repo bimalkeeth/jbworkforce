@@ -12,7 +12,7 @@ type TableAddressType struct {
 	gorm.Model
 	AddressType string `gorm:"column:addresstype;type:varchar(25);not_null"`
 	Description string `gorm:"column:description;type:varchar(300)"`
-	Addresses   []TableAddress
+	Addresses   []*TableAddress
 }
 
 func (c TableAddressType) TableName() string {
