@@ -10,7 +10,6 @@ import (
 //----------------------------------------------------
 func CreateAllowanceGroup(database *gorm.DB) {
 	if !database.HasTable(&ent.TableAllowanceGroup{}) {
-
 		database.CreateTable(&ent.TableAllowanceGroup{})
 		database.Model(&ent.TableAllowanceGroup{}).Association("alowances")
 	}
