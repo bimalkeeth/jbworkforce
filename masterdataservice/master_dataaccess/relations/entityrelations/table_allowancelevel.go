@@ -8,7 +8,7 @@ import (
 //----------------------------------------------------
 // Allowance level
 //----------------------------------------------------
-func CreateTableAllowanceLevel(database *gorm.DB) {
+func CreateAllowanceLevel(database *gorm.DB) {
 	if !database.HasTable(&ent.TableAllowanceLevel{}) {
 		database.CreateTable(&ent.TableAllowanceLevel{})
 	}

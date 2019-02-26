@@ -6,10 +6,11 @@ import (
 )
 
 //----------------------------------------------------
-// Allowance level
+// TableAward
 //----------------------------------------------------
-func CreateAvailabilityStatus(database *gorm.DB) {
-	if !database.HasTable(&ent.TableAvailabilityStatus{}) {
-		database.CreateTable(&ent.TableAvailabilityStatus{})
+func CreateTableAward(database *gorm.DB) {
+	if !database.HasTable(&ent.TableAward{}) {
+
+		database.CreateTable(&ent.TableAward{})
 	}
 }
