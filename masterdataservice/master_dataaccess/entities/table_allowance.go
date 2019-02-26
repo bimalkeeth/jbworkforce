@@ -9,7 +9,7 @@ type TableAllowance struct {
 	Description      string `gorm:"column:description;type:varchar(400)"`
 	SortOrder        string `gorm:"column:sortorder;default:0"`
 	AllowanceGroupId uint   `gorm:"column:allowancegroupid;not_null"`
-	AllowanceGroup   TableAllowanceGroup
+	AllowanceGroup   *TableAllowanceGroup
 }
 
 func (c TableAllowance) TableName() string {

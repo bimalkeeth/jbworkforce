@@ -13,7 +13,7 @@ type TableCampus struct {
 	YearlyPlannerDate       time.Time `gorm:"column:yearlyplannerdate"`
 	YearlyPlannerPeriodDate time.Time `gorm:"column:yearlyplannerperioddate"`
 	IsActive                bool      `gorm:"column:isactive;not_null;default:true"`
-	Divisions               []TableDivision
+	Divisions               []*TableDivision
 }
 
 func (c TableCampus) TableName() string {

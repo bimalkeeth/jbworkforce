@@ -7,7 +7,7 @@ type TableAllowanceGroup struct {
 	AllowanceGroupName string `gorm:"column:allowancegroupname;type:varchar(100);not_null"`
 	AllowanceGroupAbbr string `gorm:"column:allowancegroupabbr;type:varchar(50);not_null"`
 	IsActive           string `gorm:"column:isactive;not_null;default:true"`
-	Allowances         []TableAllowance
+	Allowances         []*TableAllowance
 }
 
 func (c TableAllowanceGroup) TableName() string {
