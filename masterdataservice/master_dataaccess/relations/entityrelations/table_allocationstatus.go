@@ -8,7 +8,7 @@ import (
 //----------------------------------------------------
 // Agency Address
 //----------------------------------------------------
-func CreateAllocationSttus(database *gorm.DB) {
+func CreateAllocationStus(database *gorm.DB) {
 	if !database.HasTable(&ent.TableAllocationStatus{}) {
 
 		database.CreateTable(&ent.TableAllocationStatus{})
