@@ -28,5 +28,6 @@ func (*RelationBuilder) BuildDatabase(connInfo *con.ClientInfo) (err error) {
 	entities.CreateAllocationSttus(database)
 	entities.CreateAllowanceGroup(database)
 	entities.CreateAllowance(database)
+	entities.CreateTableAllowanceLevel(database)
 	return nil
 }
