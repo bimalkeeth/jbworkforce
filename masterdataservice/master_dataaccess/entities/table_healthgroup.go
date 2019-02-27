@@ -8,7 +8,7 @@ type TableHealthGroup struct {
 	HealthGroupAbbr string `gorm:"column:healthgroupabbr;type:varchar(100);not_null"`
 	Description     string `gorm:"column:description;not_null"`
 	UserId          uint   `gorm:"column:userId;not_null"`
-	ClinicalStreams []TableClinicalStream
+	ClinicalStreams []*TableClinicalStream
 }
 
 func (c TableHealthGroup) TableName() string {
