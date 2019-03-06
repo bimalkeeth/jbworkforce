@@ -36,5 +36,6 @@ func (*RelationBuilder) BuildDatabase(connInfo *con.ClientInfo) (err error) {
 	entities.CreateClientSkillType(database)
 	entities.CreateHealthGroup(database)
 	entities.CreateClinicalStream(database)
+	entities.CreateClinicalStreamAttributes(database)
 	return nil
 }
