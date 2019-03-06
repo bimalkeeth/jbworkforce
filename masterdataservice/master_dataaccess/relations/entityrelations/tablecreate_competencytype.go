@@ -13,5 +13,7 @@ func CreateCompetencyType(database *gorm.DB) {
 		database.CreateTable(&ent.TableCompetencyType{})
 		database.Model(&ent.TableCompetencyType{}).Association("EmployeeCompetency")
 		database.Model(&ent.TableCompetencyType{}).AddUniqueIndex("idx_compentencytype_compentencyabbr", "compentencyabbr")
+		database.Model(&ent.TableCompetencyType{}).AddUniqueIndex("idx_compentencytype_compentencyname", "compentencyname")
+
 	}
 }
