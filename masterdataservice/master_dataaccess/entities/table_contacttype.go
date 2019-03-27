@@ -9,7 +9,7 @@ type TableContactType struct {
 	gorm.Model
 	ContactType string `gorm:"column:contacttype;type:varchar(25);not_null"`
 	Description string `gorm:"column:description;type:varchar(400)"`
-	Contacts    []TableContacts
+	Contacts    []*TableContacts
 }
 
 func (c TableContactType) TableName() string {
