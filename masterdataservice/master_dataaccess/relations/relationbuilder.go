@@ -46,6 +46,7 @@ func (*RelationBuilder) BuildDatabase(connInfo *con.ClientInfo) (err error) {
 	entities.CreateFinancialYear(database)
 	entities.CreateDateWeek(database)
 	entities.CreateDivision(database)
-
+	entities.CreateDepartment(database)
+	entities.CreateTableGender(database)
 	return nil
 }

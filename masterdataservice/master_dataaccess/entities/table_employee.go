@@ -1,13 +1,13 @@
 package entities
 
 import (
+	"errors"
 	"github.com/jinzhu/gorm"
 	"time"
 )
 
 type TableEmployee struct {
 	gorm.Model
-	AddressId       uint      `gorm:"column:addressid;not_null"`
 	FirstName       string    `gorm:"column:firstname;type:varchar(200);not_null"`
 	LastName        string    `gorm:"column:lastname;type:varchar(200);not_null"`
 	PrefName        string    `gorm:"column:name;type:varchar(150);not_null"`
@@ -37,8 +37,25 @@ type TableEmployee struct {
 	EmployeeDiscrepancies        []*TableEmployeeDiscrepancy
 	EmployeeEmpType              *TableEmployeeEmpType
 	EmployeeGroupEmp             *TableEmployeeGroupEmp
+	Gender                       *TableGender
 }
 
 func (c TableEmployee) TableName() string {
 	return "table_employee"
+}
+
+func (c TableEmployee) Validate(db *gorm.DB) {
+	if len(c.FirstName) > 200 {
+		_ = db.AddError(errors.New("name length should be less or equal to 200"))
+	}
+	if len(c.LastName) > 200 {
+		_ = db.AddError(errors.New("last name length should be less or equal to 200"))
+	}
+	if len(c.PrefName) > 200 {
+		_ = db.AddError(errors.New("pref. name length should be less or equal to 150"))
+	}
+	if len(c.EmpNo) > 150 {
+		_ = db.AddError(errors.New("empno length should be less or equal to 150"))
+	}
+
 }

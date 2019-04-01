@@ -13,8 +13,8 @@ type TableDepartment struct {
 	Definition     string `gorm:"column:definition;type:varchar(250);"`
 	IsActive       bool   `gorm:"column:isactive;not_null;default:true"`
 	DivisionId     uint   `gorm:"column:divisionid;not_null"`
-	Division       TableDivision
-	SubDepartments []TableSubDepartment
+	Division       *TableDivision
+	SubDepartments []*TableSubDepartment
 }
 
 func (c TableDepartment) TableName() string {
