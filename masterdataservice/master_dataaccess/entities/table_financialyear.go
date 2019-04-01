@@ -1,6 +1,7 @@
 package entities
 
 import (
+	"errors"
 	"github.com/jinzhu/gorm"
 	"time"
 )
@@ -15,4 +16,10 @@ type TableFinancialYear struct {
 
 func (c TableFinancialYear) TableName() string {
 	return "table_financialyear"
+}
+
+func (c TableFinancialYear) Validate(db *gorm.DB) {
+	if len(c.FinancialYearName) > 200 {
+		_ = db.AddError(errors.New("financial year name should be less or equal to 100"))
+	}
 }

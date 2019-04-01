@@ -1,6 +1,9 @@
 package entities
 
-import "github.com/jinzhu/gorm"
+import (
+	"errors"
+	"github.com/jinzhu/gorm"
+)
 
 type TableDepartment struct {
 	gorm.Model
@@ -16,4 +19,19 @@ type TableDepartment struct {
 
 func (c TableDepartment) TableName() string {
 	return "table_department"
+}
+func (c TableDepartment) Validate(db *gorm.DB) {
+
+	if len(c.DepartmentName) > 200 {
+		_ = db.AddError(errors.New("department name length should be less or equal to 128"))
+	}
+	if len(c.DepartmentAbbr) > 50 {
+		_ = db.AddError(errors.New("department abbr length should be less or equal to 50"))
+	}
+	if len(c.Description) > 250 {
+		_ = db.AddError(errors.New("description length should be less or equal to 250"))
+	}
+	if len(c.Definition) > 250 {
+		_ = db.AddError(errors.New("definition length should be less or equal to 250"))
+	}
 }

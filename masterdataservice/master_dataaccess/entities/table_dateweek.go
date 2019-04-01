@@ -23,6 +23,7 @@ type TableDateWeek struct {
 	MonthNumber      string    `gorm:"column:monthnumber;type:varchar(100);not_null"`
 	Year             int       `gorm:"column:year;not_null"`
 	DaysInMonth      int       `gorm:"column:daysinmonth;not_null"`
+	FinancialYear    *TableFinancialYear
 }
 
 func (c TableDateWeek) TableName() string {

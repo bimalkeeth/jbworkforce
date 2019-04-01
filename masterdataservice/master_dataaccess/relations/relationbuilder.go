@@ -40,5 +40,12 @@ func (*RelationBuilder) BuildDatabase(connInfo *con.ClientInfo) (err error) {
 	entities.CreateCompetencyType(database)
 	entities.CreateCompetencyCompletionStatus(database)
 	entities.CreateContactType(database)
+	entities.CreateOrganisation(database)
+	entities.CreateHospital(database)
+	entities.CreateCostCentre(database)
+	entities.CreateFinancialYear(database)
+	entities.CreateDateWeek(database)
+	entities.CreateDivision(database)
+
 	return nil
 }
