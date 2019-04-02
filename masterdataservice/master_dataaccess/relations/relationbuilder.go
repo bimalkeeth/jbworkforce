@@ -48,5 +48,9 @@ func (*RelationBuilder) BuildDatabase(connInfo *con.ClientInfo) (err error) {
 	entities.CreateDivision(database)
 	entities.CreateDepartment(database)
 	entities.CreateTableGender(database)
+	entities.CreateEmployee(database)
+	entities.CreateEmployeeAddress(database)
+	entities.CreateEmployeeAgency(database)
+	entities.CreateEmployeeAllowance(database)
 	return nil
 }

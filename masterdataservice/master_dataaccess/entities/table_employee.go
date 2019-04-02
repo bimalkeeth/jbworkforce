@@ -57,5 +57,4 @@ func (c TableEmployee) Validate(db *gorm.DB) {
 	if len(c.EmpNo) > 150 {
 		_ = db.AddError(errors.New("empno length should be less or equal to 150"))
 	}
-
 }
